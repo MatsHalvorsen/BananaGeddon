@@ -3,6 +3,7 @@ body {
 }
 
 .container {
+    position: relative;
     margin: 150px auto;
     width: 600px;
     height: 500px;
@@ -13,12 +14,10 @@ text-align: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
-
-
-
 }
 
-.name, password
+
+
 
 
 
@@ -31,7 +30,14 @@ justify-content: center;
 input {
     font-size: 20px;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+    margin-left: 27%;
 }
+
+
 button {
     color: #fff;
     font-weight: bold;
@@ -46,6 +52,13 @@ button {
 /* LOGIN PAGE */
 
 
+#backbutton{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 10px;
+    padding: 5px 10px;
+}
 
 
 
