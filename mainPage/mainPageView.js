@@ -1,3 +1,3 @@
 function mainPage() {
-    document.getElementById()
+    document.getElementById('app')
 }

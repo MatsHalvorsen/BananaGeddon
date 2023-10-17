@@ -1,7 +1,7 @@
 updateView();
 
 function updateView() {
-    document.getElementById('logIn').innerHTML = /*HTML*/ `
+    document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
         <h1 id="firstPage">Banageddon 2</h1>
         <button onclick="updateView2()">NY BRUKER</button>
@@ -13,7 +13,7 @@ function updateView() {
 
 
 function updateView2() {
-    document.getElementById('logIn').innerHTML = /*HTML*/ `
+    document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
 
       <div class="loginPosition">
@@ -30,7 +30,7 @@ function updateView2() {
 }
 
 function updateView3() {
-    document.getElementById('logIn').innerHTML = /*HTML*/ `
+    document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
     
         <div class="loginform"> 
