@@ -86,6 +86,7 @@ function loginUser() {
    if (foundUser) {
     alert(`logged in. Hello, ${user.name}`)
     // add view to main when that is made
+    mainPage();
    } else {
     alert("not logged in")
    }
