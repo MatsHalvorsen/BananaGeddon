@@ -13,7 +13,7 @@ function updateView() {
 
 
 function updateView2() {
-    document.getElementById('newUser').innerHTML = /*HTML*/ `
+    document.getElementById('logIn').innerHTML = /*HTML*/ `
     <div class="container">
 
       <div class="loginPosition">

@@ -1,7 +1,4 @@
 
-
-
-
 /////////////////////////Funksjon som pusher ny bruker inn i databasen - Mathias
 function makeUser(){
     let PLACEHOLDER = "dette er en placeholder";
@@ -12,7 +9,23 @@ function makeUser(){
     model.inputs.addUser.name = name;
     model.inputs.addUser.password = PLACEHOLDER; /////////// må lage en funksjon som skjekker om "password" og "confirmpassword" er riktig
 
-    model.data.user
+    model.data.user.push({
+        id: model.data.user.length+1,
+        name: model.inputs.addUser.name,
+        password: model.inputs.addUser.password,
+        coins: 0,
+        upgrades: {
+            hp: 0,
+            jump: 0,
+        },
+        ownedSkins: ["skin1"],
+        equippedSkin: ["skin1"],
+        highscore: 0,
+    })
+    
+    console.log("lag bruker navn logg")
+    console.log(model.data.user[3].name)
+    console.log(model.data.user[3].id)
 }
 /////////////////////////
 
@@ -24,8 +37,6 @@ function checkIfUserExists() {
     console.log(usersArray)
     // console.log(model.data.user[3].name)
     
-   
-}
     if ( model.data.user.includes(model.data.user[3].name) ) {
         // console.log("This user exists!")
         // Allows you to log in as this user if password is correct or...
@@ -42,7 +53,7 @@ function checkIfUserExists() {
         // Allow you to create a new user using this username or...
         // Stops you from being able to log in as this is not a valid username
     }
-
+}
 /////////////////////////////
 // function updateview(){
 //     var backbutton = document.querySelector('.container button');
