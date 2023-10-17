@@ -12,11 +12,12 @@ function makeUser(){
     model.inputs.addUser.name = name;
     model.inputs.addUser.password = PLACEHOLDER; /////////// må lage en funksjon som skjekker om "password" og "confirmpassword" er riktig
 
-    
+    model.data.user
 }
 /////////////////////////
 
 //Funksjon som sjekker om er eksisterende bruker eller ikke i databasen
 function isLogedIn() {
     
+    if ()
 }
