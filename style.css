@@ -1,6 +1,6 @@
 /* GENERAL */
 body {
-    background-image: url(".img/Logo.png"); 
+    background-image: url("/img/Logo.png"); 
 }
 
 .container {
@@ -41,6 +41,12 @@ button {
     padding: 15px;
     border: none;
     border-radius: 25px;
+    
+}
+
+button:hover {
+    color: rgb(28, 28, 28);
+    background-color: rgb(211, 211, 211)
 }
 
 /* LOGIN PAGE */

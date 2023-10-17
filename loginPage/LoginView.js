@@ -38,7 +38,7 @@ function updateView3() {
             <input type="password" id="password" placeholder="passord">
         </div>
 
-        <button onclick="">logg inn</button>
+        <button onclick="loginUser()">logg inn</button>
         <button id="backbutton" onclick="updateView()">⬅</button>
     </div>
     `;

@@ -28,22 +28,26 @@ function makeUser(){
     console.log(model.data.user[3].id)
 }
 /////////////////////////
-
+//funksjon som skjekker om "password" og "confirmpassword" er riktig
+function checkIfPasswordMatch(){
+    
+}
+/////////////////////////
 
 //Funksjon som sjekker om er eksisterende bruker eller ikke i databasen - John
 function checkIfUserExists() {
     const usersArray = model.data.user
+    console.log(model.data.user[3].name)
     makeUser()
     // console.log(usersArray)
-    // console.log(model.data.user[3].name)
     
     if ( usersArray.includes(model.data.user[3].name) ) {
-        console.log("This user exists!")
+        // console.log("This user exists!")
         // Allows you to log in as this user if password is correct or...
         // Stops you from creating a new user with this username as it is already taken
 
-        if (passwordInput === model.data.user.password) {
-            console.log("Valid username and password, you are now logged in!")
+        if (passwordInput === model.data.user[3].password) {
+            // console.log("Valid username and password, you are now logged in!")
             // Allows the user to log in as they have a valid username and password
         } else {console.log("Wrong username or password!")}
             // No entry!
@@ -60,3 +64,17 @@ function checkIfUserExists() {
     
 // }
 ///////////////////////////// 
+
+// Funksjon som logger bruker inn og sender til main page
+function loginUser() {
+    
+    let name = document.getElementById('username').input;
+    let password = document.getElementById('password').input;
+
+    if (name == model.data.user && password == model.data.user) {
+        alert("loged in")
+    }   else {
+        alert("not a user")
+    }
+
+}
