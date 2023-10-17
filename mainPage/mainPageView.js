@@ -1,0 +1,3 @@
+function mainPage() {
+    document.getElementById()
+}
