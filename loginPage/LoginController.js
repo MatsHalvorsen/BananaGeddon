@@ -68,13 +68,25 @@ function checkIfUserExists() {
 // Funksjon som logger bruker inn og sender til main page
 function loginUser() {
     
-    let name = document.getElementById('username').input;
-    let password = document.getElementById('password').input;
+    let name = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
 
-    if (name == model.data.user && password == model.data.user) {
-        alert("loged in")
-    }   else {
-        alert("not a user")
+    let foundUser = false;
+    let user;
+
+    for (let i = 0; i < model.data.user.length; i++) {
+        const currentUser = model.data.user[i];
+        if (name === currentUser.name && password === currentUser.password) {
+            foundUser = true;
+            user = currentUser;
+            break;
+        }
     }
 
+   if (foundUser) {
+    alert(`logged in. Hello, ${user.name}`)
+    // add view to main when that is made
+   } else {
+    alert("not logged in")
+   }
 }

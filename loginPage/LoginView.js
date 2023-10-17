@@ -1,4 +1,4 @@
-updateView2();
+updateView();
 
 function updateView() {
     document.getElementById('logIn').innerHTML = /*HTML*/ `
@@ -38,7 +38,7 @@ function updateView3() {
             <input type="password" id="password" placeholder="passord">
         </div>
 
-        <button onclick="loginUser()">logg inn</button>
+        <button onclick="loginUser()" onchange="loginUser()">logg inn</button>
         <button id="backbutton" onclick="updateView()">⬅</button>
     </div>
     `;
