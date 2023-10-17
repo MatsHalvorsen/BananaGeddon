@@ -8,7 +8,6 @@ function updateView() {
         <button onclick="updateView3()">LOGG INN</button>
         <!-- <button id="backbutton" onclick="updateview()">tilbake</button>-->
     </div>
-    <img src="./img/Logo.png">
     `;
 }
 
@@ -35,7 +34,7 @@ function updateView3() {
     <div class="container">
     
         <div class="loginform"> 
-            <input type="text" id="username" placehoder="brukernavn">
+            <input type="text" id="username" placeholder="brukernavn">
             <input type="password" id="password" placeholder="passord">
         </div>
 
