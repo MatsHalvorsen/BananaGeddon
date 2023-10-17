@@ -13,7 +13,6 @@ body {
 display: flex;
 flex-direction: column;
 justify-content: center;
-<<<<<<< HEAD
 align-items: center;
 
 
@@ -23,34 +22,12 @@ align-items: center;
 }
 
 
-=======
-}
-
-
-
->>>>>>> 73ab11791694b8521ff993f951218e84a90bbfd6
-
-
-
-
-
-
-
-
-    
 input {
     font-size: 20px;
     padding: 10px;
     display: flex;
-<<<<<<< HEAD
     margin: 10px 0;
 
-=======
-    flex-direction: row;
-    justify-content: center;
-    margin: 10px;
-    margin-left: 27%;
->>>>>>> 73ab11791694b8521ff993f951218e84a90bbfd6
 }
 
 

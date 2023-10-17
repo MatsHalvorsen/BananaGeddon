@@ -6,6 +6,7 @@ function updateView() {
         <h1 id="firstPage">Banageddon 2</h1>
         <button onclick="updateView2()">NY BRUKER</button>
         <button onclick="updateView3()">LOGG INN</button>
+        <!-- <button id="backbutton" onclick="updateview()">tilbake</button>-->
     </div>
     `;
 }
@@ -22,6 +23,7 @@ function updateView2() {
       </div>
 
         <button onclick="makeUser()">LAG BRUKER</button>
+        <button id="backbutton" onclick="updateView()">⬅</button>
         
     </div>
     `;
@@ -34,8 +36,10 @@ function updateView3() {
         <div class="loginform"> 
             <input type="text" id="username" placehoder="brukenavn">
             <input type="password" id="password" placeholder="passord">
-            <button onclick="">Logginn</button>
         </div>
+
+        <button onclick="">logg inn</button>
+        <button id="backbutton" onclick="updateView()">⬅</button>
     </div>
     `;
 }
