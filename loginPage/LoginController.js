@@ -34,22 +34,22 @@ function makeUser(){
 function checkIfUserExists() {
     const usersArray = model.data.user
     makeUser()
-    console.log(usersArray)
+    // console.log(usersArray)
     // console.log(model.data.user[3].name)
     
-    if ( model.data.user.includes(model.data.user[3].name) ) {
-        // console.log("This user exists!")
+    if ( usersArray.includes(model.data.user[3].name) ) {
+        console.log("This user exists!")
         // Allows you to log in as this user if password is correct or...
         // Stops you from creating a new user with this username as it is already taken
 
-        // if (passwordInput === model.data.user.password) {
-        //     console.log("Valid username and password, you are now logged in!")
-        //     // Allows the user to log in as they have a valid username and password
-        // } else {console.log("Wrong username or password!")}
-        //     // No entry!
+        if (passwordInput === model.data.user.password) {
+            console.log("Valid username and password, you are now logged in!")
+            // Allows the user to log in as they have a valid username and password
+        } else {console.log("Wrong username or password!")}
+            // No entry!
 
     } else {
-        // console.log("This user doesn't exist!")
+        console.log("This user doesn't exist!")
         // Allow you to create a new user using this username or...
         // Stops you from being able to log in as this is not a valid username
     }

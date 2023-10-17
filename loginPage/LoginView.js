@@ -8,6 +8,7 @@ function updateView() {
         <button onclick="updateView3()">LOGG INN</button>
         <!-- <button id="backbutton" onclick="updateview()">tilbake</button>-->
     </div>
+    <img src="./img/Logo.png">
     `;
 }
 
@@ -18,8 +19,8 @@ function updateView2() {
 
       <div class="loginPosition">
         <input id="name" type="text" placeholder="NAVN">
-        <input id="password" type="text" placeholder="PASSORD">
-        <input id="confirmpassword" type="text" placeholder="PASSORD">
+        <input id="password" type="password" placeholder="PASSORD">
+        <input id="confirmpassword" type="password" placeholder="PASSORD">
       </div>
 
         <button onclick="makeUser()">LAG BRUKER</button>
@@ -34,7 +35,7 @@ function updateView3() {
     <div class="container">
     
         <div class="loginform"> 
-            <input type="text" id="username" placehoder="brukenavn">
+            <input type="text" id="username" placehoder="brukernavn">
             <input type="password" id="password" placeholder="passord">
         </div>
 
