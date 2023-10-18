@@ -1,12 +1,14 @@
-mainPage()
-
+// MAIN PAGE VIEW ///////////////////////////////////////////////////////////////////////
 function mainPage() {
-    document.getElementById('app').innerHTML /*HTML*/ `
+    document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="main">
-        <h1>Welcome to main page!</h1>
+        <div class="container">
+        <button onclick="">Endre utseende</button>
+        <button onclick="">Butikk</button>
+            <button onclick="">SPILL</button>
+            <button onclick="updateViewNewUserOrLogin()">LOGG UT</button>
+            <button onclick="">Toppliste</button>
+        </div>
     </div>
-
     `;
-    console.log("FUCK")
 }
-

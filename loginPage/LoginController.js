@@ -1,14 +1,51 @@
+// LOGIN PAGE CONTROLLER ////////////////////////////////////////////////////////////////
 
-/////////////////////////Funksjon som pusher ny bruker inn i databasen - Mathias
-function makeUser(){
-    let PLACEHOLDER = "dette er en placeholder";
-    let name = document.getElementById('name').value;
-    let password = document.getElementById('password').value;
-    let confirmpassword = document.getElementById('confirmpassword').value;
+function createNewUser(){
+// Stores new user info into model.inputs for later -----------------------------------------
+// New username
+    model.inputs.addUser.name = document.getElementById('newUsername').value;
+// New password
+    model.inputs.addUser.password = document.getElementById('newPassword').value;
+// New password confirm
+    const newUserPasswordConfirm = document.getElementById('confirmPassword').value;
 
-    model.inputs.addUser.name = name;
-    model.inputs.addUser.password = PLACEHOLDER; /////////// må lage en funksjon som skjekker om "password" og "confirmpassword" er riktig
+// Checks if passwords match and then pushes the user into the users array
+checkIfUserAlreadyExists(newUserPasswordConfirm)
+}
 
+
+//Funksjon som sjekker om er eksisterende bruker eller ikke i databasen ---------------------
+function checkIfUserAlreadyExists(newUserPasswordConfirm) {
+    const usersArray = model.data.user
+    
+    if ( usersArray.includes(model.inputs.addUser.name) ) {
+        console.log("This username already exists! Try a different one^^")
+        return
+    } else {
+        console.log("This user doesn't exist! Checking if passwords match...")
+        checkIfPasswordMatch(newUserPasswordConfirm)
+    }
+}
+
+
+//funksjon som skjekker om "password" og "confirmpassword" er riktig ------------------------
+function checkIfPasswordMatch(newUserPasswordConfirm){
+    if (model.inputs.addUser.password === newUserPasswordConfirm) {
+        console.log("passwords match!")
+
+        pushNewUser()
+        updateViewLogin()
+    } else {
+        console.log(model.inputs.addUser.password)
+        console.log(newUserPasswordConfirm)
+        console.log("passwords DON'T match!")
+        return
+    }
+}
+
+
+// Pushes info from model.input.addUser into the array of all users -------------------------
+function pushNewUser() {
     model.data.user.push({
         id: model.data.user.length+1,
         name: model.inputs.addUser.name,
@@ -22,50 +59,12 @@ function makeUser(){
         equippedSkin: ["skin1"],
         highscore: 0,
     })
-    
-    console.log("lag bruker navn logg")
-    console.log(model.data.user[3].name)
-    console.log(model.data.user[3].id)
 }
-/////////////////////////
-//funksjon som skjekker om "password" og "confirmpassword" er riktig
-function checkIfPasswordMatch(){
-    
-}
-/////////////////////////
 
-//Funksjon som sjekker om er eksisterende bruker eller ikke i databasen - John
-function newUser() {
-    const usersArray = model.data.user
-    console.log(model.data.user[3].name)
-    makeUser()
-    // console.log(usersArray)
-    
-    if ( usersArray.includes(model.data.user[3].name) ) {
-        // console.log("This user exists!")
-        // Allows you to log in as this user if password is correct or...
-        // Stops you from creating a new user with this username as it is already taken
 
-        if (passwordInput === model.data.user[3].password) {
-            // console.log("Valid username and password, you are now logged in!")
-            // Allows the user to log in as they have a valid username and password
-        } else {console.log("Wrong username or password!")}
-            // No entry!
 
-    } else {
-        console.log("This user doesn't exist!")
-        // Allow you to create a new user using this username or...
-        // Stops you from being able to log in as this is not a valid username
-    }
-}
-/////////////////////////////
-// function updateview(){
-//     var backbutton = document.querySelector('.container button');
-    
-// }
-///////////////////////////// 
 
-// Funksjon som logger bruker inn og sender til main page
+// Funksjon som logger bruker inn og sender til main page ----------------------------------------
 function loginUser() {
     
     let name = document.getElementById('username').value;
@@ -82,12 +81,11 @@ function loginUser() {
             break;
         }
     }
-
+    // Logs in if user exists
    if (foundUser) {
-    alert(`logged in. Hello, ${user.name}`)
-    // add view to main when that is made
     mainPage();
    } else {
-    alert("not logged in")
+    alert("Feil brukernavn eller passord!")
+    return
    }
 }
