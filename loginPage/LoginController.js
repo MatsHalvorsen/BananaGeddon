@@ -35,7 +35,7 @@ function checkIfPasswordMatch(){
 /////////////////////////
 
 //Funksjon som sjekker om er eksisterende bruker eller ikke i databasen - John
-function checkIfUserExists() {
+function newUser() {
     const usersArray = model.data.user
     console.log(model.data.user[3].name)
     makeUser()
