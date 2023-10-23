@@ -7,7 +7,7 @@ updateViewNewUserOrLogin();
 function updateViewNewUserOrLogin() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
-        <img src="./loginPage/img/Logo.png">
+        <img class="bananorama-logo" src="./loginPage/img/bananorama-logo.png">
         <h1 id="firstPage">Bananageddon 2</h1>
         <h2>- Bana Harder -</h2>
         <button onclick="updateViewCreateUser()">NY BRUKER</button>

@@ -33,6 +33,7 @@ function checkIfPasswordMatch(newUserPasswordConfirm){
     if (model.inputs.addUser.password === newUserPasswordConfirm) {
         console.log("passwords match!")
 
+        alert("Ny bruker registrert. Vennligst logg inn...")
         pushNewUser()
         updateViewLogin()
     } else {
