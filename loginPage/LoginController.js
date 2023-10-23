@@ -18,13 +18,14 @@ checkIfUserAlreadyExists(newUserPasswordConfirm)
 function checkIfUserAlreadyExists(newUserPasswordConfirm) {
     const usersArray = model.data.user
     
-    if ( usersArray.includes(model.inputs.addUser.name) ) {
+for (let i = 0; i < usersArray.length; i++) {
+    if (usersArray[i].name === model.inputs.addUser.name) {
         console.log("This username already exists! Try a different one^^")
-        return
-    } else {
-        console.log("This user doesn't exist! Checking if passwords match...")
-        checkIfPasswordMatch(newUserPasswordConfirm)
+        return updateViewCreateUser()
     }
+}
+console.log("This user doesn't exist! Checking if passwords match...")
+return checkIfPasswordMatch(newUserPasswordConfirm)
 }
 
 
