@@ -12,11 +12,11 @@ function changeSkin(buttonpushed){
             if (model.data.user[userIndex].equippedSkin <= 1){
                 model.data.user[userIndex].equippedSkin = 1;
             }
-            test = model.data.user[userIndex].ownedSkins[model.data.user[userIndex].equippedSkin-2];
+            test = model.data.user[userIndex].ownedSkins[model.data.user[userIndex].equippedSkin-2];/// "test" er indexen til "ownedSkins", som skal brukes til å velge hvilket skin som er "equippedSkin" 
         } else{
             model.data.user[userIndex].equippedSkin+=1;
-            if (model.data.user[userIndex].equippedSkin >= 10){
-                model.data.user[userIndex].equippedSkin = 10;
+            if (model.data.user[userIndex].equippedSkin >= model.data.user[userIndex].ownedSkins.length){
+                model.data.user[userIndex].equippedSkin = model.data.user[userIndex].ownedSkins.length;
             }
             test = model.data.user[userIndex].ownedSkins[model.data.user[userIndex].equippedSkin-2];
         }
