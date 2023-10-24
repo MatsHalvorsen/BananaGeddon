@@ -7,8 +7,8 @@ function storeView() {
             <h2 id="pageheader">
                 BUTIKK
             </h2>
-            <button id="backbutton" onclick="updateView()">⬅</button>
-            <h3>MYNTER:</h3>
+            <button id="backbutton" onclick="mainPage()">⬅</button>
+            <h3>MYNTER: <span id="coinCount"></span></h3>
         </div>
 
         <div class="upgrades">
@@ -34,16 +34,25 @@ function storeView() {
         </h2>
         <div class="skinsGrid">
             <div class="upgradebox">
+            <button onclick="">
                 <p>BANAN</p>
             </div>
+            </button>
+    
             <div class="upgradebox">
                 <p>BANAN MED SLIPS</p>
+                <p>Pris: </p>
             </div>
+
             <div class="upgradebox">
                 <p>BANANASAURUS</p>
             </div>
+
         </div>
     </div>
 </div>
 `;
+
+getCoins();
+
 }

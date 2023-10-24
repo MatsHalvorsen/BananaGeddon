@@ -4,7 +4,7 @@ function mainPage() {
     <div class="main">
         <div class="container">
         <button onclick="">Endre utseende</button>
-        <button onclick="">Butikk</button>
+        <button onclick="storeView()">Butikk</button>
             <button onclick="">SPILL</button>
             <button onclick="updateViewNewUserOrLogin()">LOGG UT</button>
             <button onclick="">Toppliste</button>
