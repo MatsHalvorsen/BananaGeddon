@@ -1,12 +1,15 @@
-mainPage()
-
+// MAIN PAGE VIEW ///////////////////////////////////////////////////////////////////////
 function mainPage() {
-    document.getElementById('app').innerHTML /*HTML*/ `
+    document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="main">
-        <h1>Welcome to main page!</h1>
+        <div class="container">
+        <h2>Min Toppscore: ${model.app.currentUser.highscore}</h2>
+        <button onclick="UpdateChangeSkinView()">Endre utseende</button>
+        <button onclick="storeView()">Butikk</button>
+            <button onclick="updateGameView()">SPILL</button>
+            <button onclick="updateViewNewUserOrLogin()">LOGG UT</button>
+            <button onclick="">Toppliste</button>
+        </div>
     </div>
-
     `;
-    console.log("FUCK")
 }
-

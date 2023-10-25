@@ -1,35 +1,48 @@
-updateView();
+// LOGIN PAGE VIEW //////////////////////////////////////////////////////////////////////
+updateViewNewUserOrLogin();
 
-function updateView() {
+
+
+// PAGE FOR CHOOSING TO CREATE NEW USER OR LOG IN AS EXISTING USER //---------------------
+function updateViewNewUserOrLogin() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
-        <h1 id="firstPage">Banageddon 2</h1>
-        <button onclick="updateView2()">NY BRUKER</button>
-        <button onclick="updateView3()">LOGG INN</button>
-        <!-- <button id="backbutton" onclick="updateview()">tilbake</button>-->
+        <img class="bananorama-logo" src="./loginPage/img/bananorama-logo.png">
+        <h1 id="firstPage">Bananageddon 2</h1>
+        <h2>- Bana Harder -</h2>
+        <button onclick="updateViewCreateUser()">NY BRUKER</button>
+        <button onclick="updateViewLogin()">LOGG INN</button>
     </div>
     `;
 }
+// Problem with rendering image.
+// for some reason the image seems to have weird address on my pc,
+// that might be the problem?
 
 
-function updateView2() {
+
+// PAGE FOR CREATING A NEW USER //---------------------------------------------------------
+function updateViewCreateUser() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
 
       <div class="loginPosition">
-        <input id="name" type="text" placeholder="NAVN">
-        <input id="password" type="password" placeholder="PASSORD">
-        <input id="confirmpassword" type="password" placeholder="PASSORD">
+        <input id="newUsername" type="text" placeholder="NAVN">
+        <input id="newPassword" type="password" placeholder="PASSORD">
+        <input id="confirmPassword" type="password" placeholder="PASSORD">
       </div>
 
-        <button onclick="makeUser()">LAG BRUKER</button>
-        <button id="backbutton" onclick="updateView()">⬅</button>
+        <button onclick="createNewUser()">LAG BRUKER</button>
+        <button id="backbutton" onclick="updateViewNewUserOrLogin()">⬅</button>
         
     </div>
     `;
 }
 
-function updateView3() {
+
+
+// PAGE FOR LOGGING IN AS AN EXISTING USER //----------------------------------------------
+function updateViewLogin() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
     
@@ -39,7 +52,7 @@ function updateView3() {
         </div>
 
         <button onclick="loginUser()" onchange="loginUser()">logg inn</button>
-        <button id="backbutton" onclick="updateView()">⬅</button>
+        <button id="backbutton" onclick="updateViewNewUserOrLogin()">⬅</button>
     </div>
     `;
 }
