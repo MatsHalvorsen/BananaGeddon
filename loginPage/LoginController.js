@@ -73,13 +73,13 @@ function loginUser() {
     let password = document.getElementById('password').value;
 
     let foundUser = false;
-    let user;
-
+    
     for (let i = 0; i < model.data.user.length; i++) {
         const currentUser = model.data.user[i];
         if (name === currentUser.name && password === currentUser.password) {
             foundUser = true;
-            user = currentUser;
+            model.app.isLoggedIn = true
+            model.app.currentUser = currentUser;
             break;
         }
     }
