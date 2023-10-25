@@ -12,6 +12,7 @@ const model = {
             id: null,
             name: '',
             password: '',
+            coins: 0,
             highscore: 0,
         }
     },
