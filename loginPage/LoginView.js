@@ -5,6 +5,8 @@ updateViewNewUserOrLogin();
 
 // PAGE FOR CHOOSING TO CREATE NEW USER OR LOG IN AS EXISTING USER //---------------------
 function updateViewNewUserOrLogin() {
+    model.app.isLoggedIn = false;
+    
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
         <img class="bananorama-logo" src="./loginPage/img/bananorama-logo.png">

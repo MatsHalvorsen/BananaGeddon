@@ -12,6 +12,7 @@ const model = {
             id: null,
             name: '',
             password: '',
+            coins: 0,
             highscore: 0,
         }
     },
@@ -58,9 +59,23 @@ const model = {
         ],
 
         skins: [
-            'brown banana',
-            'formal banana',
-            'dino banana',
+            {
+                itemnum: '1',
+                name: 'brownBanana',
+                price: 100,
+            },
+
+            {
+                itemnum: '2',
+                name: 'formalBanana',
+                price: 200,
+            },
+            {
+                itemnum: '3',
+                name: 'bananaSaurus',
+                price: 300,
+            }
+
         ],
 
         user: [
