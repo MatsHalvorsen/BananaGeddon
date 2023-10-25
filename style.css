@@ -63,7 +63,7 @@ button:hover {
 .upgradebox {
     border: 1px solid black;
     width: 150px;
-    height: 150px;
+    height: 200px;
 }
 
 .upgrades, .skins {
@@ -80,4 +80,14 @@ button:hover {
 
 .bananorama-logo {
     width: 100px;
+}
+
+img.slips {
+    width: 90px;
+    height: auto;
+}
+
+img.saurus {
+    width: 90px;
+    height: auto;
 }
