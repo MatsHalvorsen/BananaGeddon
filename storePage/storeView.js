@@ -40,13 +40,13 @@ function storeView() {
             </button>
     
             <div class="upgradebox">
-            <img class="saurus" src="/bananasaurus.png" alt="bananasaurus">
+            <img class="saurus" src="${model.data.skins[2].img}" alt="bananasaurus">
                 <p>${model.data.skins[2].name}</p>
                 <p>Pris: ${model.data.skins[2].price}</p>
             </div>
 
             <div class="upgradebox">
-            <img class="slips" src="/bananmedslips.png" alt="bananmedslips">
+            <img class="slips" src="${model.data.skins[1].img}" alt="bananmedslips">
                 <p>${model.data.skins[1].name}</p>
                 <p>Pris: ${model.data.skins[1].price}</p>
             </div>

@@ -63,17 +63,20 @@ const model = {
                 itemnum: '1',
                 name: 'brownBanana',
                 price: 100,
+                img: "",
             },
 
             {
                 itemnum: '2',
                 name: 'formalBanana',
                 price: 200,
+                img: "/images/bananmedslips.png"
             },
             {
                 itemnum: '3',
                 name: 'bananaSaurus',
                 price: 300,
+                img: "/images/bananasaurus.png",
             }
 
         ],
