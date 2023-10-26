@@ -34,15 +34,15 @@ function storeView() {
         </h2>
         <div class="skinsGrid">
             <div class="upgradebox">
-            <button onclick="">
                 <p>BANAN</p>
             </div>
-            </button>
+            
     
             <div class="upgradebox">
             <img class="saurus" src="${model.data.skins[2].img}" alt="bananasaurus">
                 <p>${model.data.skins[2].name}</p>
                 <p>Pris: ${model.data.skins[2].price}</p>
+                <button class="skinsbtn">text here</button>
             </div>
 
             <div class="upgradebox">

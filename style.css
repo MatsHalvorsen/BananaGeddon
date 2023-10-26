@@ -91,3 +91,8 @@ img.saurus {
     width: 90px;
     height: auto;
 }
+
+.upgradebox button.skinsbtn {
+    width: 135px;
+    height: 15px;
+}
