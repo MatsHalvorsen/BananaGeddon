@@ -8,7 +8,7 @@ function mainPage() {
         <button onclick="storeView()">Butikk</button>
             <button onclick="updateGameView()">SPILL</button>
             <button onclick="updateViewNewUserOrLogin()">LOGG UT</button>
-            <button onclick="">Toppliste</button>
+            <button onclick="updateViewHighscore()">Toppliste</button>
         </div>
     </div>
     `;

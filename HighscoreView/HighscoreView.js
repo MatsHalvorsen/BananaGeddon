@@ -1,5 +1,3 @@
-
-updateViewHighscore()
 function updateViewHighscore() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
