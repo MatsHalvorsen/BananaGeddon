@@ -8,7 +8,7 @@ function storeView() {
                 BUTIKK
             </h2>
             <button id="backbutton" onclick="mainPage()">⬅</button>
-            <h3>MYNTER: <span id="coinCount"></span></h3>
+            <h3>MYNTER: <span>${getCoins()}</span></h3>
         </div>
 
         <div class="upgrades">
@@ -33,33 +33,10 @@ function storeView() {
             SKINS
         </h2>
         <div class="skinsGrid">
-            <div class="upgradebox">
-            <img class="saurus" src="${model.data.skins[2].img}" alt="bananasaurus">
-            <p>${model.data.skins[2].name}</p>
-            <p>Pris: ${model.data.skins[2].price}</p>   
-            <button class="skinsbtn" onclick="skinsToModel('1')">KJØP</button>             
-            </div>
-            
-    
-            <div class="upgradebox">
-            <img class="saurus" src="${model.data.skins[2].img}" alt="bananasaurus">
-                <p>${model.data.skins[2].name}</p>
-                <p>Pris: ${model.data.skins[2].price}</p>
-                <button class="skinsbtn" onclick="skinsToModel('2')">KJØP</button>
-            </div>
-
-            <div class="upgradebox">
-            <img class="slips" src="${model.data.skins[1].img}" alt="bananmedslips">
-                <p>${model.data.skins[1].name}</p>
-                <p>Pris: ${model.data.skins[1].price}</p>
-                <button class="skinsbtn" onclick="skinsToModel('3')">KJØP</button>
-            </div>
-
+            ${showSkins()}
         </div>
     </div>
 </div>
 `;
-
-getCoins();
 
 }

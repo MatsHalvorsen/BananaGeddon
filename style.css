@@ -67,8 +67,8 @@ button:hover {
     justify-content: center;
     text-align: center; 
     border: 1px solid black;
-    width: 150px;
-    height: 300px;
+    width: 300px;
+    height: auto;
     background-color: rgb(44, 62, 80);
     color: white;
     border-radius: 10px;
@@ -95,15 +95,21 @@ button:hover {
     width: 100px;
 }
 
-img.slips {
-    width: 90px;
+img.aiBanana {
+    width: 250px;
     height: auto;
 }
 
-img.saurus {
-    width: 90px;
+img.formalBanana {
+    width: 180px;
     height: auto;
 }
+
+img.bananaSaurus {
+    width: 180px;
+    height: auto;
+}
+
 
 
 .upgradebox button.skinsbtn {

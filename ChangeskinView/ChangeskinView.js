@@ -1,5 +1,5 @@
 /*UpdateChangeSkinView()*/
-storeView()
+UpdateChangeSkinView()
 // let skinPicture = "<h1>BILDE</h1>";
 function UpdateChangeSkinView(){
     document.getElementById('app').innerHTML = /*HTML*/`

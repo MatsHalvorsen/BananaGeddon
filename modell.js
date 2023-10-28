@@ -9,11 +9,11 @@ const model = {
         ],
         isLoggedIn: false,
         currentUser: {
-            id: null,
-            name: '',
-            password: '',
-            coins: 0,
-            highscore: 0,
+            id: 1,
+            name: 'bananmann',
+            password: 'bananergodt123',
+            coins: 700,
+            highscore: 6969,
         }
     },
 
@@ -61,9 +61,9 @@ const model = {
         skins: [
             {
                 itemnum: '1',
-                name: 'brownBanana',
+                name: 'aiBanana',
                 price: 100,
-                img: "/images/bananmedslips.png"
+                img: "/images/aiBanana.png"
             },
 
             {
@@ -86,7 +86,7 @@ const model = {
                 id: '1',
                 name: 'bananmann',
                 password: 'bananergodt123',
-                coins: 0,
+                coins: 700,
                 upgrades: {
                     hp: 0,
                     jump: 0,
