@@ -41,6 +41,15 @@ const model = {
         liveCoins: 0,
         isAlive: true,
 
+        encounters: [
+            {
+                event: "rock"
+            },
+            {
+                event: "cactus"
+            },
+        ],
+
         highscoreBoard: [
             {
                 navn: 'bananorama AS',

@@ -4,6 +4,7 @@ function startGame() {
     if (model.data.isAlive === true) {
         setInterval(incrementPoints, 1000)
         setInterval(incrementCoins, 5000)
+        setInterval(chooseRandomEncounter, 2500)
         
     } else {
         console.log("isAlive is: False")
@@ -30,4 +31,14 @@ function incrementPoints() {
 function incrementCoins() {
     model.data.liveCoins += 5
     console.log(model.data.liveCoins + " Coins!")
+}
+chooseRandomEncounter()
+// Picks a random event from model.data.encounters[]
+function chooseRandomEncounter() {
+    console.log("WATCH OUT! THERE'S A " + model.data.encounters[generateRandomNumber(model.data.encounters.length)].event + ".")
+}
+
+// Generates a random number based on the parameter
+function generateRandomNumber(number) {
+    return Math.floor(Math.random() * number)
 }
