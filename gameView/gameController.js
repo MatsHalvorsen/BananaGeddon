@@ -21,23 +21,24 @@ function startGame() {
     }
 }
 
+
+// SCORE + COINS //
 // Increments the points by 1 each second
 function incrementPoints() {
     model.data.liveHighscore++
     console.log(model.data.liveHighscore)
 }
-
 // Increments the coins by 5 every 5 seconds
 function incrementCoins() {
     model.data.liveCoins += 5
     console.log(model.data.liveCoins + " Coins!")
 }
-chooseRandomEncounter()
+
+// RANDOM ENCOUNTER //
 // Picks a random event from model.data.encounters[]
 function chooseRandomEncounter() {
     console.log("WATCH OUT! THERE'S A " + model.data.encounters[generateRandomNumber(model.data.encounters.length)].event + ".")
 }
-
 // Generates a random number based on the parameter
 function generateRandomNumber(number) {
     return Math.floor(Math.random() * number)
