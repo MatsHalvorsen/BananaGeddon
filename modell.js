@@ -13,7 +13,13 @@ const model = {
             name: 'bananmann',
             password: 'bananergodt123',
             coins: 700,
-            highscore: 6969,
+            upgrades: {
+                hp: 0,
+                jump: 0,
+            },
+            ownedSkins: [1,2,3,4,5,6,7,8,9,10],
+            equippedSkin: 5,
+            highscore: 6969
         }
     },
 
