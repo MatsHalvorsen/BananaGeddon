@@ -5,9 +5,9 @@ function UpdateChangeSkinView(){
     document.getElementById('app').innerHTML = /*HTML*/`
         <div class="container"> 
             <button id="backbutton" onclick="mainPage()"><h1>⬅</h1></button>
-            <button onclick="changeSkin('left')">⬅</button>
+            <button onclick="changeSkin('left');UpdateChangeSkinView()">⬅</button>
             <img src=${getimg()}>
-            <button onclick="changeSkin('right')">➡</button>
+            <button onclick="changeSkin('right');UpdateChangeSkinView()">➡</button>
         </div>
     `;
 }
