@@ -1,27 +1,43 @@
+//funksjon som bytter skin
 function changeSkin(buttonpushed){
     let test
     let userIndex = 0;
-    let equippedSkin = model.app.currentUser.equippedSkin;
+    let equippedSkin = model.app.currentUser.equippedSkin.skinID;
 
 
         if (buttonpushed == 'left'){
-            model.app.currentUser.equippedSkin-=1;
-            if (model.app.currentUser.equippedSkin <= 1){
-                model.app.currentUser.equippedSkin = 1;
+            model.app.currentUser.equippedSkin.skinID-=1;
+            if (model.app.currentUser.equippedSkin.skinID <= 1){
+                model.app.currentUser.equippedSkin.skinID = 1;
             }
-            test = model.app.currentUser.ownedSkins[model.app.currentUser.equippedSkin-1];/// "test" er indexen til "ownedSkins", som skal brukes til å velge hvilket skin som er "equippedSkin" 
+            test = model.app.currentUser.ownedSkins[model.app.currentUser.equippedSkin.skinID-1];/// "test" er indexen til "ownedSkins", som skal brukes til å velge hvilket skin som er "equippedSkin.skinID" 
+            model.app.currentUser.equippedSkin.skinID-=1;
         } else{
-            model.app.currentUser.equippedSkin+=1;
-            if (model.app.currentUser.equippedSkin >= model.app.currentUser.ownedSkins.length){
-                model.app.currentUser.equippedSkin = model.app.currentUser.ownedSkins.length;
+            model.app.currentUser.equippedSkin.skinID+=1;
+            if (model.app.currentUser.equippedSkin.skinID >= model.app.currentUser.ownedSkins.length){
+                model.app.currentUser.equippedSkin.skinID = model.app.currentUser.ownedSkins.length;
             }
-            test = model.app.currentUser.ownedSkins[model.app.currentUser.equippedSkin-1];
+            test = model.app.currentUser.ownedSkins[model.app.currentUser.equippedSkin.skinID-1];
+            model.app.currentUser.equippedSkin.skinID+=1;
         }
-    
-    
-    
-
-        console.log(buttonpushed);
-        console.log(model.app.currentUser.equippedSkin);
-        console.log(test);
+        console.log("test");
+        getimg()
+        // console.log(model.app.currentUser.equippedSkin.skinID);
+        // console.log(test);
+        // console.log(model.app.currentUser.ownedSkins[test-2]);
     }
+
+    function getimg(){
+        for(let obj of model.data.skins){
+            if(obj.itemnum == model.app.currentUser.equippedSkin.skinID){
+                console.log("ja")
+                // model.app.currentUser.equippedSkin.skinID.skinPath = obj.img
+                return obj.img
+                //UpdateChangeSkinView()
+            }else{
+                console.log("nei")
+            }
+        }
+        // UpdateChangeSkinView();
+    }
+        
