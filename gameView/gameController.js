@@ -5,6 +5,8 @@ function startGame() {
         setInterval(incrementPoints, 1000)
         setInterval(incrementCoins, 5000)
         setInterval(chooseRandomEncounter, 2500)
+        setInterval(setRunAnimation1, 100)
+        setInterval(setRunAnimation2, 200)
         
     } else {
         console.log("isAlive is: False")
@@ -19,6 +21,16 @@ function startGame() {
         }
         return
     }
+}
+
+
+function setRunAnimation1() {
+    model.app.currentAnimation.sprite = "run1"
+    updateGameView()
+}
+function setRunAnimation2() {
+    model.app.currentAnimation.sprite = "run2"
+    updateGameView()
 }
 
 
