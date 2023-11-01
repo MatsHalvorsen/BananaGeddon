@@ -24,3 +24,12 @@ function generateHighscore() {
     console.log(highscoreBoard)
     return highscoreBoard
 }
+
+function orderedHighscore() {
+    var highscoreBoard = [0,0,0,0,0]
+
+    highscores.sort(function(a, b) {
+        return b - a;
+    });
+    
+}
