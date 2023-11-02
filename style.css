@@ -1,6 +1,6 @@
 /* GENERAL */
 body {
-    background-image: url("/img/Logo.png"); 
+    background-image: url("/img/Logo.png");
 }
 
 .container {
@@ -8,17 +8,17 @@ body {
     margin: 150px auto;
     width: 600px;
     height: 500px;
-    background-color: gray;
+    background-image: url("./images/banana-background.jpg");
     border-radius: 100px;
 
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-
-
-
+    border: solid 15px rgb(221, 200, 8);
+    color: whitesmoke;
+    text-shadow: 0 0 10px black;
 
 }
 
@@ -96,7 +96,7 @@ button:hover {
 }
 
 img.aiBanana {
-    width: 250px;
+    width: 180px;
     height: auto;
 }
 
@@ -119,4 +119,11 @@ img.bananaSaurus {
     justify-content: center;
     align-items: center;
     text-align: center; 
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: grey;
+    min-height: 100%;
 }

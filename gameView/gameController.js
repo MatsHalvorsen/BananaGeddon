@@ -4,6 +4,9 @@ function startGame() {
     if (model.data.isAlive === true) {
         setInterval(incrementPoints, 1000)
         setInterval(incrementCoins, 5000)
+        setInterval(chooseRandomEncounter, 2500)
+        setInterval(setRunAnimation1, 100)
+        setInterval(setRunAnimation2, 200)
         
     } else {
         console.log("isAlive is: False")
@@ -20,14 +23,35 @@ function startGame() {
     }
 }
 
+
+function setRunAnimation1() {
+    model.app.currentAnimation.sprite = "run1"
+    updateGameView()
+}
+function setRunAnimation2() {
+    model.app.currentAnimation.sprite = "run2"
+    updateGameView()
+}
+
+
+// SCORE + COINS //
 // Increments the points by 1 each second
 function incrementPoints() {
     model.data.liveHighscore++
     console.log(model.data.liveHighscore)
 }
-
 // Increments the coins by 5 every 5 seconds
 function incrementCoins() {
     model.data.liveCoins += 5
     console.log(model.data.liveCoins + " Coins!")
+}
+
+// RANDOM ENCOUNTER //
+// Picks a random event from model.data.encounters[]
+function chooseRandomEncounter() {
+    console.log("WATCH OUT! THERE'S A " + model.data.encounters[generateRandomNumber(model.data.encounters.length)].event + ".")
+}
+// Generates a random number based on the parameter
+function generateRandomNumber(number) {
+    return Math.floor(Math.random() * number)
 }

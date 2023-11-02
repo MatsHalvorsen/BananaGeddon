@@ -13,8 +13,18 @@ const model = {
             name: 'bananmann',
             password: 'bananergodt123',
             coins: 700,
-            highscore: 6969,
-        }
+            upgrades: {
+                hp: 0,
+                jump: 0,
+            },
+            ownedSkins: [1,2,3],
+            equippedSkin:{skinID:1, skinPath: ""},
+            highscore: 6969
+        },
+        currentAnimation: {
+            skin: "ugly",
+            sprite: "idle",
+        },
     },
 
 
@@ -34,6 +44,15 @@ const model = {
         liveHighscore: 0,
         liveCoins: 0,
         isAlive: true,
+
+        encounters: [
+            {
+                event: "rock"
+            },
+            {
+                event: "cactus"
+            },
+        ],
 
         highscoreBoard: [
             {
@@ -60,23 +79,23 @@ const model = {
 
         skins: [
             {
-                itemnum: '1',
+                itemnum: 1,
                 name: 'aiBanana',
                 price: 100,
-                img: "/images/aiBanana.png"
+                img: "/images/sprites/ugly-idle.png"
             },
 
             {
-                itemnum: '2',
+                itemnum: 2,
                 name: 'formalBanana',
                 price: 200,
-                img: "/images/bananmedslips.png"
+                img: "/images/sprites/peel-idle.png"
             },
             {
-                itemnum: '3',
+                itemnum: 3,
                 name: 'bananaSaurus',
                 price: 300,
-                img: "/images/bananasaurus.png",
+                img: "/images/sprites/dino-idle.png",
             }
 
         ],
