@@ -1,4 +1,7 @@
 function updateViewHighscore() {
+
+    orderedHighscore()
+
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="container">
     <h1>Toppliste</h1>
@@ -26,10 +29,12 @@ function generateHighscore() {
 }
 
 function orderedHighscore() {
-    var highscoreBoard = [0,0,0,0,0]
+    var highscoreBoard = model.data.highscoreBoard;
 
-    highscores.sort(function(a, b) {
-        return b - a;
+    highscoreBoard.sort(function(a, b) {
+        return b.score - a.score;
     });
     
 }
+updateViewHighscore()
+
