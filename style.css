@@ -1,6 +1,6 @@
 /* GENERAL */
 body {
-    background-image: url("/img/Logo.png"); 
+    background-image: url("/img/Logo.png");
 }
 
 .container {
@@ -119,4 +119,11 @@ img.bananaSaurus {
     justify-content: center;
     align-items: center;
     text-align: center; 
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: grey;
+    min-height: 100%;
 }
