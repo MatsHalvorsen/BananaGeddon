@@ -127,3 +127,27 @@ footer {
     background-color: grey;
     min-height: 100%;
 }
+
+
+/* GAME CSS */
+.game-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(211, 211, 211);
+    margin-bottom: 200px;
+}
+
+.start-btn {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 30%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+#player-character{
+    margin-left: 25vw;
+}

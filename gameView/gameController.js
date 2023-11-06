@@ -1,12 +1,13 @@
-
+let runInterval1;
+let runInterval2;
 
 function startGame() {
     if (model.data.isAlive === true) {
         setInterval(incrementPoints, 1000)
         setInterval(incrementCoins, 5000)
-        setInterval(chooseRandomEncounter, 2500)
-        setInterval(setRunAnimation1, 100)
-        setInterval(setRunAnimation2, 200)
+        // setInterval(chooseRandomEncounter, 2500)
+        runInterval1 = setInterval(setRunAnimation1, 200)
+        runInterval2 = setInterval(setRunAnimation2, 400)
         
     } else {
         console.log("isAlive is: False")
@@ -23,6 +24,38 @@ function startGame() {
     }
 }
 
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+        jump();
+    }
+});
+function jump() {
+    updateGameView()
+    character = document.getElementById("player-character");
+    
+    clearInterval(runInterval1);
+    clearInterval(runInterval2);
+    
+    setTimeout(function() {
+        character.style.margin = "-60px 0 60px 25vw"}, 0);
+    setTimeout(function() {
+        character.style.margin = "-120px 0 120px 25vw"}, 200);
+    setTimeout(function() {
+        character.style.margin = "-60px 0 60px 25vw"}, 400);
+    setTimeout(function() {
+        character.style.margin = "0 0 0 25vw"
+        runInterval1 = setInterval(setRunAnimation1, 200);
+        runInterval2 = setInterval(setRunAnimation2, 400);
+    }, 600);
+}
+
+
+
+
+
+
+
+
 
 function setRunAnimation1() {
     model.app.currentAnimation.sprite = "run1"
@@ -32,6 +65,18 @@ function setRunAnimation2() {
     model.app.currentAnimation.sprite = "run2"
     updateGameView()
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // SCORE + COINS //
