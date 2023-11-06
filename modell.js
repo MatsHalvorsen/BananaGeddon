@@ -80,20 +80,20 @@ const model = {
         skins: [
             {
                 itemnum: 1,
-                name: 'aiBanana',
+                name: 'ugly',
                 price: 100,
                 img: "/images/sprites/ugly-idle.png"
             },
 
             {
                 itemnum: 2,
-                name: 'formalBanana',
+                name: 'peel',
                 price: 200,
                 img: "/images/sprites/peel-idle.png"
             },
             {
                 itemnum: 3,
-                name: 'bananaSaurus',
+                name: 'dino',
                 price: 300,
                 img: "/images/sprites/dino-idle.png",
             }
