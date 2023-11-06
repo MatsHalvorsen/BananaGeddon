@@ -24,7 +24,7 @@ function generateHighscore() {
         </li>
         `
     }
-    console.log(highscoreBoard)
+    // console.log(highscoreBoard)
     return highscoreBoard
 }
 
