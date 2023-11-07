@@ -1,6 +1,7 @@
 /* GENERAL */
 body {
     background-image: url("/img/Logo.png");
+    margin: 0;
 }
 
 #back {    
@@ -141,7 +142,7 @@ footer {
     display: flex;
     position: absolute;
     top: -20px;
-    left: 250px;
+    right: 0px;
 }
 
 .start-btn {

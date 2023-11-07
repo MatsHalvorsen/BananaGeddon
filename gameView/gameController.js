@@ -69,27 +69,28 @@ function setRunAnimation2() {
 
 
 
+let currentHealth = 5;
 
 function updateHealthBar() {
-    return `
-    <img class="heart-icon" src="./images/heart-full.png">
-    <img class="heart-icon" src="./images/heart-full.png">
-    <img class="heart-icon" src="./images/heart-full.png">
-    <img class="heart-icon" src="./images/heart-full.png">
-    <img class="heart-icon" src="./images/heart-full.png">
-    `
+    let html = ""
+    for (let i = 0; i < (5 + model.app.currentUser.upgrades.hp); i++) {
+        if (i < currentHealth) {
+            html += `<img class="heart-icon" src="./images/heart-full.png">`
+        } else {
+            html += `<img class="heart-icon" src="./images/heart-empty.png">`
+        }
+    }
+    return html
 }
 
 // SCORE + COINS //
 // Increments the points by 1 each second
 function incrementPoints() {
     model.data.liveHighscore++
-    console.log(model.data.liveHighscore)
 }
 // Increments the coins by 5 every 5 seconds
 function incrementCoins() {
     model.data.liveCoins += 5
-    console.log(model.data.liveCoins + " Coins!")
 }
 
 // RANDOM ENCOUNTER //
