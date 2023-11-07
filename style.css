@@ -3,6 +3,13 @@ body {
     background-image: url("/img/Logo.png");
 }
 
+#back {    
+    background: url(images/gameBackground.jpg);
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    }
+
 .container {
     position: relative;
     margin: 150px auto;

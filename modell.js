@@ -41,6 +41,11 @@ const model = {
     },
 
     data: {
+        back: [
+            {
+                img: "/images/gameBackground.jpg"
+            },
+        ],
         liveHighscore: 0,
         liveCoins: 0,
         isAlive: true,
