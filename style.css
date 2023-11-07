@@ -7,7 +7,7 @@ body {
 #back {    
     background: url(images/gameBackground.jpg);
     background-size: cover;
-    height: 90vh;
+    height: 860px;
     width: 100%;
     }
 
@@ -161,7 +161,7 @@ footer {
 }
 #player-character{
     position: absolute;
-    top: 490px;
+    top: 515px;
     left: -5%;
 }
 #hp-bar{
