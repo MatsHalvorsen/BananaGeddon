@@ -35,4 +35,4 @@ function showStartBtn() {
     setInterval(moveBackground, 2);
 
 setInterval(moveBackground, 2);
-updateGameView();
+// updateGameView();
