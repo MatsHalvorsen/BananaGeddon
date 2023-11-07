@@ -1,5 +1,3 @@
-/*UpdateChangeSkinView()*/
-UpdateChangeSkinView()
 function UpdateChangeSkinView(){
     document.getElementById('app').innerHTML = /*HTML*/`
         <div class="container"> 

@@ -115,8 +115,8 @@ const model = {
                     hp: 0,
                     jump: 0,
                 },
-                ownedSkins: [1,2,3,4,5,6,7,8,9,10],
-                equippedSkin: 5,
+                ownedSkins: [1],
+                equippedSkin:{skinID:1, skinPath: ""},
                 highscore: 6969,
             },
             {
@@ -128,8 +128,8 @@ const model = {
                     hp: 0,
                     jump: 0,
                 },
-                ownedSkins: [1,2,3,4,5,6,7,8,9,10],
-                equippedSkin: 5,
+                ownedSkins: [1,2,3],
+                equippedSkin:{skinID:1, skinPath: ""},
                 highscore: 6969,
             },
             {
@@ -141,8 +141,8 @@ const model = {
                     hp: 0,
                     jump: 0,
                 },
-                ownedSkins: ['skin1','skin2','skin3','skin4','skin5','skin6','skin7','skin8','skin9','skin10'],
-                equippedSkin: ['skin5'],
+                ownedSkins: [1],
+                equippedSkin:{skinID:1, skinPath: ""},
                 highscore: 6969,
             },
             
