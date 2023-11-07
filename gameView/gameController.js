@@ -8,6 +8,7 @@ function startGame() {
         // setInterval(chooseRandomEncounter, 2500)
         runInterval1 = setInterval(setRunAnimation1, 200)
         runInterval2 = setInterval(setRunAnimation2, 400)
+        setInterval(moveBackground, 2)
         
     } else {
         console.log("isAlive is: False")
@@ -49,14 +50,6 @@ function jump() {
     }, 600);
 }
 
-
-
-
-
-
-
-
-
 function setRunAnimation1() {
     model.app.currentAnimation.sprite = "run1"
     updateGameView()
@@ -77,7 +70,15 @@ function setRunAnimation2() {
 
 
 
-
+function updateHealthBar() {
+    return `
+    <img class="heart-icon" src="./images/heart-full.png">
+    <img class="heart-icon" src="./images/heart-full.png">
+    <img class="heart-icon" src="./images/heart-full.png">
+    <img class="heart-icon" src="./images/heart-full.png">
+    <img class="heart-icon" src="./images/heart-full.png">
+    `
+}
 
 // SCORE + COINS //
 // Increments the points by 1 each second

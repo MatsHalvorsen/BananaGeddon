@@ -137,12 +137,11 @@ footer {
 
 
 /* GAME CSS */
-.game-stats {
+#game-stats {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: rgb(211, 211, 211);
-    margin-bottom: 200px;
+    position: absolute;
+    top: -20px;
+    left: 250px;
 }
 
 .start-btn {
@@ -155,6 +154,19 @@ footer {
     margin-top: -50px;
     margin-left: -100px;
 }
+
+#gameScreen {
+    position: relative;
+}
 #player-character{
-    margin-left: 25vw;
+    position: absolute;
+    top: 490px;
+    left: -5%;
+}
+#hp-bar{
+    position: absolute;
+}
+.heart-icon {
+    padding: 5px;
+    width: 25px;
 }
