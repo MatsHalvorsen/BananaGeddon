@@ -8,7 +8,7 @@ function updateGameView() {
     <div id="game-stats">
         <h1>|| Topp Score: ${model.app.currentUser.highscore} |</h1>
         <h1>| Poeng: ${model.data.liveHighscore} |</h1>
-        <h1>| Mynter: ${model.data.liveCoins} ||</h1>
+        <h1>| <img src="./images/coin.png" style="width: 25px"> ${model.data.liveCoins} ||</h1>
     </div>
     
     <button

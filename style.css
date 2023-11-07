@@ -1,12 +1,13 @@
 /* GENERAL */
 body {
     background-image: url("/img/Logo.png");
+    margin: 0;
 }
 
 #back {    
     background: url(images/gameBackground.jpg);
     background-size: cover;
-    height: 90vh;
+    height: 860px;
     width: 100%;
     }
 
@@ -141,7 +142,7 @@ footer {
     display: flex;
     position: absolute;
     top: -20px;
-    left: 250px;
+    right: 0px;
 }
 
 .start-btn {
@@ -160,7 +161,7 @@ footer {
 }
 #player-character{
     position: absolute;
-    top: 490px;
+    top: 515px;
     left: -5%;
 }
 #hp-bar{
