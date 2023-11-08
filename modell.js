@@ -128,7 +128,7 @@ const model = {
                     hp: 0,
                     jump: 0,
                 },
-                ownedSkins: [1,2,3],
+                ownedSkins: [1],
                 equippedSkin:{skinID:1, skinPath: ""},
                 highscore: 6969,
             },

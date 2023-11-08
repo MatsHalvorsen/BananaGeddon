@@ -14,4 +14,4 @@ function mainPage() {
     </div>
     `;
 }
-mainPage()
+// mainPage()
