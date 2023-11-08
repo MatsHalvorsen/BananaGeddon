@@ -6,7 +6,7 @@ function moveBackground() {
 }
 
 
-var isAlive = true;
+var isLiving = true;
 
 window.onload = function() {
     spawnObstacle();
@@ -41,11 +41,11 @@ function spawnObstacle() {
 
 function checkCollision(obstacleX) {
 
-    if (isAlive == false) return;
+    if (isLiving == false) return;
 
     if (obstacleX > 23 && obstacleX < 25) {
         alert("You died");
-        isAlive = false;
+        isLiving = false;
         location.reload();
     }
 }
