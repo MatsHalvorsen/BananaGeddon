@@ -1,3 +1,4 @@
+
 function updateGameView() {
     document.getElementById('app').innerHTML = /*HTML*/`
     
@@ -30,4 +31,5 @@ function updateGameView() {
 
 function showStartBtn() {
     document.getElementById("start-btn").style.display = "inline"
+    newObsatacle.style.display = "none";
 }
