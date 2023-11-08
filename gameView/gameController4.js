@@ -1,8 +1,10 @@
-//Lyd for hopp og coin collection
+//Lyd for hopping
 
-<audio id="jumpSound" src="Jump Sound.wav" preload="auto"></audio>
+const jumpSound = new Audio('/gameView/gameSounds/jumpsound.wav');
 
-var jumpSound = document.getElementById('jumpSound');
+// {/* <audio id="jumpSound" src="/gameSounds/jumpsound.wav" preload="auto"></audio> */}
+
+// var jumpSound = document.getElementById('jumpSound');
 
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Space') {
@@ -13,7 +15,7 @@ document.addEventListener('keydown', function(event) {
 
 function playJumpSound() {
     if (!jumpSound.paused) {
-        jumpSound.currentTime = 0;
+        // jumpSound.currentTime = 0;
     }
     jumpSound.play();
 }
