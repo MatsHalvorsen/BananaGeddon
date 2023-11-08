@@ -45,8 +45,8 @@ function checkCollision(obstacleX) {
     if (isLiving == false) return;
 
     var dino = document.getElementById("player-character");
-    var dinoTop = dinoY; // Top position of the dino
-    var dinoBottom = dinoY + dino.clientHeight; // Bottom position of the dino
+    var dinoTop = dinoY; 
+    var dinoBottom = dinoY + dino.clientHeight; 
 
 
     if (obstacleX > 23 && obstacleX < 25) {
