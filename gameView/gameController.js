@@ -3,8 +3,11 @@ let runInterval2;
 let pointInterval;
 let coinInterval;
 let backgroundInterval;
+let obstacleInterval;
 
 function startGame() {
+    newObsatacle.style.display = "inline";
+
     model.data.isAlive = true
     if (model.data.isAlive === true) {
         runInterval1 = setInterval(setRunAnimation1, 200)
@@ -12,6 +15,13 @@ function startGame() {
         pointInterval = setInterval(incrementPoints, 1000)
         coinInterval = setInterval(incrementCoins, 5000)
         backgroundInterval = setInterval(moveBackground, 2)
+        obstacleInterval = setInterval(function() {
+            obstacleX -= 1;
+            newObsatacle.style.left = obstacleX + "%";
+    
+            checkCollision(obstacleX);
+    
+        },100)
         // setInterval(chooseRandomEncounter, 2500)
         
         spawnObstacle()
@@ -43,6 +53,9 @@ document.addEventListener("keydown", function(event) {
         jump();
     }
 });*/
+
+
+
 function jump() {
     updateGameView()
     character = document.getElementById("player-character");
@@ -85,7 +98,7 @@ function checkIsAlive() {
         clearInterval(backgroundInterval);
         clearInterval(runInterval1);
         clearInterval(runInterval2);
-        
+
         setTimeout(function(){
             mainPage()}, 500)
     }
