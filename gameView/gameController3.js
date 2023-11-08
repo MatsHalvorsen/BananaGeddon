@@ -15,12 +15,12 @@ window.onload = function() {
 function spawnObstacle() {
     var obstacleX = 100;
 
-    var newObsatacle = document.createElement("div");
-    newObsatacle.style.backgroundColor = "red";
-    newObsatacle.style.height = "5%";
-    newObsatacle.style.width = "2.5%";
+    var newObsatacle = document.createElement("img");
+    newObsatacle.src = "/images/monkey.png"
+    newObsatacle.style.height = "10%";
+    newObsatacle.style.width = "5%";
     newObsatacle.style.position = "absolute";
-    newObsatacle.style.top = "50%";
+    newObsatacle.style.top = "45%";
     newObsatacle.style.left = "50%";
 
     setInterval(function() {
@@ -41,7 +41,13 @@ function spawnObstacle() {
 
 function checkCollision(obstacleX) {
 
+
     if (isLiving == false) return;
+
+    var dino = document.getElementById("player-character");
+    var dinoTop = dinoY; // Top position of the dino
+    var dinoBottom = dinoY + dino.clientHeight; // Bottom position of the dino
+
 
     if (obstacleX > 23 && obstacleX < 25) {
         alert("You died");

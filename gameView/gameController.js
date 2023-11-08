@@ -43,24 +43,34 @@ document.addEventListener("keydown", function(event) {
         jump();
     }
 });*/
+var isJumping = false; 
+
 function jump() {
+    if (isJumping) return;
+
+    isJumping = true;
+
     jumpSound.play();
-    updateGameView()
-    character = document.getElementById("player-character");
-    
+    updateGameView();
+    var character = document.getElementById("player-character");
+
     clearInterval(runInterval1);
     clearInterval(runInterval2);
-    
+
     setTimeout(function() {
-        character.style.margin = "-60px 0 60px 25vw"}, 0);
+        character.style.margin = "-70px 0 70px 25vw"
+    }, 0);
     setTimeout(function() {
-        character.style.margin = "-120px 0 120px 25vw"}, 200);
+        character.style.margin = "-200px 0 200px 25vw"
+    }, 200);
     setTimeout(function() {
-        character.style.margin = "-60px 0 60px 25vw"}, 400);
+        character.style.margin = "-70px 0 70px 25vw"
+    }, 400);
     setTimeout(function() {
-        character.style.margin = "0 0 0 25vw"
+        character.style.margin = "0 0 0 25vw";
         runInterval1 = setInterval(setRunAnimation1, 200);
         runInterval2 = setInterval(setRunAnimation2, 400);
+        isJumping = false; 
     }, 600);
 }
 
