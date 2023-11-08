@@ -1,5 +1,3 @@
-storeView()
-
 function storeView() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="pageContainer">
@@ -36,7 +34,5 @@ function storeView() {
             ${showSkins()}
         </div>
     </div>
-</div>
 `;
-
 }

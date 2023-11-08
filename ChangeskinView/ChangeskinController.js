@@ -15,9 +15,10 @@ function changeSkin(buttonpushed){
 function getimg(){
     for(let obj of model.data.skins){
         if(obj.itemnum == model.app.currentUser.equippedSkin.skinID){
+            model.app.currentAnimation.skin=obj.name;
             return obj.img;
         }else{
-            console.log("nei");
+            // console.log("nei");
         }
     }
 }

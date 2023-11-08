@@ -24,7 +24,6 @@ function generateHighscore() {
         </li>
         `
     }
-    console.log(highscoreBoard)
     return highscoreBoard
 }
 
@@ -36,5 +35,4 @@ function orderedHighscore() {
     });
     
 }
-updateViewHighscore()
 
