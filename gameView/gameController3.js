@@ -44,8 +44,11 @@ function checkCollision(obstacleX) {
     if (isLiving == false) return;
 
     if (obstacleX > 23 && obstacleX < 25) {
+        deathSound.play();
         alert("You died");
         isLiving = false;
         location.reload();
+        
     }
+    
 }

@@ -117,6 +117,7 @@ function incrementPoints() {
 }
 // Increments the coins by 5 every 5 seconds
 function incrementCoins() {
+    coinSound.play();
     model.data.liveCoins += 5
 }
 
