@@ -1,4 +1,8 @@
 var m = 0;
+var obstacleX = 100;
+var newObsatacle = document.createElement("div");
+newObsatacle.style.display = "none";
+
 
 function moveBackground() {
     m--;
@@ -13,23 +17,24 @@ window.onload = function() {
 }
 
 function spawnObstacle() {
-    var obstacleX = 100;
+    // var obstacleX = 100;
 
-    var newObsatacle = document.createElement("img");
-    newObsatacle.src = "/images/monkey.png"
-    newObsatacle.style.height = "10%";
-    newObsatacle.style.width = "5%";
+    // var newObsatacle = document.createElement("div");
+    // newObsatacle.style.display = "none";
+    newObsatacle.style.backgroundColor = "red";
+    newObsatacle.style.height = "5%";
+    newObsatacle.style.width = "2.5%";
     newObsatacle.style.position = "absolute";
-    newObsatacle.style.top = "45%";
+    newObsatacle.style.top = "50%";
     newObsatacle.style.left = "50%";
 
-    setInterval(function() {
-        obstacleX -= 1;
-        newObsatacle.style.left = obstacleX + "%";
+    // setInterval(function() {
+    //     obstacleX -= 1;
+    //     newObsatacle.style.left = obstacleX + "%";
 
-        checkCollision(obstacleX);
+    //     checkCollision(obstacleX);
 
-    },100)
+    // },100)
     document.body.appendChild(newObsatacle)
 
     var respawnTime = (Math.random()*3000) + 1000
@@ -41,17 +46,14 @@ function spawnObstacle() {
 
 function checkCollision(obstacleX) {
 
-
     if (isLiving == false) return;
 
-    var dino = document.getElementById("player-character");
-    var dinoTop = dinoY; 
-    var dinoBottom = dinoY + dino.clientHeight; 
-
-
     if (obstacleX > 23 && obstacleX < 25) {
+        deathSound.play();
         alert("You died");
         isLiving = false;
         location.reload();
+        
     }
+    
 }
