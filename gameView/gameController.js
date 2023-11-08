@@ -1,14 +1,18 @@
 let runInterval1;
 let runInterval2;
+let pointInterval;
+let coinInterval;
+let backgroundInterval;
 
 function startGame() {
+    model.data.isAlive = true
     if (model.data.isAlive === true) {
-        setInterval(incrementPoints, 1000)
-        setInterval(incrementCoins, 5000)
-        // setInterval(chooseRandomEncounter, 2500)
         runInterval1 = setInterval(setRunAnimation1, 200)
         runInterval2 = setInterval(setRunAnimation2, 400)
-        setInterval(moveBackground, 2)
+        pointInterval = setInterval(incrementPoints, 1000)
+        coinInterval = setInterval(incrementCoins, 5000)
+        backgroundInterval = setInterval(moveBackground, 2)
+        // setInterval(chooseRandomEncounter, 2500)
         
     } else {
         console.log("isAlive is: False")
@@ -62,24 +66,37 @@ function setRunAnimation2() {
 
 
 
+function checkIsAlive() {
+    if (currentHealth > 0){
+        return
+    }else {
+        model.data.isAlive = false
+        clearInterval(pointInterval);
+        clearInterval(coinInterval);
+        clearInterval(backgroundInterval);
+        clearInterval(runInterval1);
+        clearInterval(runInterval2);
+        
+        setTimeout(function(){
+            mainPage()}, 500)
+    }
+}
 
 
 
 
-
-
-
-let currentHealth = 5;
+let currentHealth = 3;
 
 function updateHealthBar() {
+    checkIsAlive()
     let html = ""
-    for (let i = 0; i < (5 + model.app.currentUser.upgrades.hp); i++) {
-        if (i < currentHealth) {
-            html += `<img class="heart-icon" src="./images/heart-full.png">`
-        } else {
-            html += `<img class="heart-icon" src="./images/heart-empty.png">`
+        for (let i = 0; i < (3 + model.app.currentUser.upgrades.hp); i++) {
+            if (i < currentHealth) {
+                html += `<img class="heart-icon" src="./images/heart-full.png">`
+            } else {
+                html += `<img class="heart-icon" src="./images/heart-empty.png">`
+            }
         }
-    }
     return html
 }
 
@@ -93,12 +110,12 @@ function incrementCoins() {
     model.data.liveCoins += 5
 }
 
-// RANDOM ENCOUNTER //
-// Picks a random event from model.data.encounters[]
-function chooseRandomEncounter() {
-    console.log("WATCH OUT! THERE'S A " + model.data.encounters[generateRandomNumber(model.data.encounters.length)].event + ".")
-}
-// Generates a random number based on the parameter
-function generateRandomNumber(number) {
-    return Math.floor(Math.random() * number)
-}
+// // RANDOM ENCOUNTER //
+// // Picks a random event from model.data.encounters[]
+// function chooseRandomEncounter() {
+//     console.log("WATCH OUT! THERE'S A " + model.data.encounters[generateRandomNumber(model.data.encounters.length)].event + ".")
+// }
+// // Generates a random number based on the parameter
+// function generateRandomNumber(number) {
+//     return Math.floor(Math.random() * number)
+// }
