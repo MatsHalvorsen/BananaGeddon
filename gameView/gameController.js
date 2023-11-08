@@ -10,6 +10,7 @@ function startGame() {
         runInterval2 = setInterval(setRunAnimation2, 400)
         setInterval(moveBackground, 2)
         
+        spawnObstacle()
     } else {
         console.log("isAlive is: False")
         
@@ -25,11 +26,19 @@ function startGame() {
     }
 }
 
+var dinoY = 45;
+
+window.onkeydown = function(e) {
+    if (e.keyCode == 32 || e.keyCode == 38){
+        jump()
+    }
+}
+/*
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
         jump();
     }
-});
+});*/
 function jump() {
     updateGameView()
     character = document.getElementById("player-character");

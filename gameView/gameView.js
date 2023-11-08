@@ -1,5 +1,3 @@
-
-
 function updateGameView() {
     document.getElementById('app').innerHTML = /*HTML*/`
     
@@ -25,6 +23,7 @@ function updateGameView() {
         src="/images/sprites/${model.app.currentAnimation.skin}-${model.app.currentAnimation.sprite}.png">
         <img id="back">
     </div>
+    
     `
 }
 
