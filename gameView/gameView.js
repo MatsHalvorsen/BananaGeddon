@@ -1,5 +1,3 @@
-
-
 function updateGameView() {
     document.getElementById('app').innerHTML = /*HTML*/`
     
@@ -26,6 +24,7 @@ function updateGameView() {
             <img id="back">
         </div>
     </div>
+    
     `
 }
 
