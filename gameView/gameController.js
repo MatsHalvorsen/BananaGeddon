@@ -57,6 +57,7 @@ document.addEventListener("keydown", function(event) {
 
 
 function jump() {
+    jumpSound.play();
     updateGameView()
     character = document.getElementById("player-character");
     
