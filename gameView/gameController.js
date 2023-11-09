@@ -15,24 +15,22 @@ function startGame() {
         pointInterval = setInterval(incrementPoints, 1000)
         coinInterval = setInterval(incrementCoins, 5000)
         backgroundInterval = setInterval(moveBackground, 2)
-        obstacleInterval = setInterval(function() {
+        obstacleInterval = setInterval(function () {
             obstacleX -= 1;
             newObsatacle.style.left = obstacleX + "%";
-    
+
             checkCollision(obstacleX);
-    
-        },100)
-        // setInterval(chooseRandomEncounter, 2500)
-        
+        }, 100);
+
         spawnObstacle()
     } else {
         console.log("isAlive is: False")
-        
-        // Adds coins from current session to the players coin total
+
+        // Adds coins from the current session to the player's coin total
         model.app.currentUser.coins += model.data.liveCoins
 
-        // Checks if the players current score is higher than their previous highscore.
-        // If so then their highscore is updated to the new higher value
+        // Checks if the player's current score is higher than their previous high score.
+        // If so, then their high score is updated to the new higher value
         if (model.data.liveHighscore > model.app.currentUser.highscore) {
             model.app.currentUser.highscore = model.data.liveHighscore
         }
@@ -42,35 +40,30 @@ function startGame() {
 
 var dinoY = 45;
 
-window.onkeydown = function(e) {
-    if (e.keyCode == 32 || e.keyCode == 38){
+window.onkeydown = function (e) {
+    if (e.keyCode == 32 || e.keyCode == 38) {
         jump()
     }
 }
-/*
-document.addEventListener("keydown", function(event) {
-    if (event.code === "Space") {
-        jump();
-    }
-});*/
-
-
 
 function jump() {
     jumpSound.play();
     updateGameView()
     character = document.getElementById("player-character");
-    
+
     clearInterval(runInterval1);
     clearInterval(runInterval2);
-    
-    setTimeout(function() {
-        character.style.margin = "-60px 0 60px 25vw"}, 0);
-    setTimeout(function() {
-        character.style.margin = "-120px 0 120px 25vw"}, 200);
-    setTimeout(function() {
-        character.style.margin = "-60px 0 60px 25vw"}, 400);
-    setTimeout(function() {
+
+    setTimeout(function () {
+        character.style.margin = "-60px 0 60px 25vw"
+    }, 0);
+    setTimeout(function () {
+        character.style.margin = "-120px 0 120px 25vw"
+    }, 200);
+    setTimeout(function () {
+        character.style.margin = "-60px 0 60px 25vw"
+    }, 400);
+    setTimeout(function () {
         character.style.margin = "0 0 0 25vw"
         runInterval1 = setInterval(setRunAnimation1, 200);
         runInterval2 = setInterval(setRunAnimation2, 400);
@@ -81,18 +74,16 @@ function setRunAnimation1() {
     model.app.currentAnimation.sprite = "run1"
     updateGameView()
 }
+
 function setRunAnimation2() {
     model.app.currentAnimation.sprite = "run2"
     updateGameView()
 }
 
-
-
-
 function checkIsAlive() {
-    if (currentHealth > 0){
+    if (currentHealth > 0) {
         return
-    }else {
+    } else {
         model.data.isAlive = false
         clearInterval(pointInterval);
         clearInterval(coinInterval);
@@ -100,26 +91,24 @@ function checkIsAlive() {
         clearInterval(runInterval1);
         clearInterval(runInterval2);
 
-        setTimeout(function(){
-            mainPage()}, 500)
+        setTimeout(function () {
+            mainPage()
+        }, 500)
     }
 }
-
-
-
 
 let currentHealth = 3;
 
 function updateHealthBar() {
     checkIsAlive()
     let html = ""
-        for (let i = 0; i < (3 + model.app.currentUser.upgrades.hp); i++) {
-            if (i < currentHealth) {
-                html += `<img class="heart-icon" src="./images/heart-full.png">`
-            } else {
-                html += `<img class="heart-icon" src="./images/heart-empty.png">`
-            }
+    for (let i = 0; i < (3 + model.app.currentUser.upgrades.hp); i++) {
+        if (i < currentHealth) {
+            html += `<img class="heart-icon" src="./images/heart-full.png">`
+        } else {
+            html += `<img class="heart-icon" src="./images/heart-empty.png">`
         }
+    }
     return html
 }
 
@@ -128,18 +117,9 @@ function updateHealthBar() {
 function incrementPoints() {
     model.data.liveHighscore++
 }
+
 // Increments the coins by 5 every 5 seconds
 function incrementCoins() {
     coinSound.play();
     model.data.liveCoins += 5
 }
-
-// // RANDOM ENCOUNTER //
-// // Picks a random event from model.data.encounters[]
-// function chooseRandomEncounter() {
-//     console.log("WATCH OUT! THERE'S A " + model.data.encounters[generateRandomNumber(model.data.encounters.length)].event + ".")
-// }
-// // Generates a random number based on the parameter
-// function generateRandomNumber(number) {
-//     return Math.floor(Math.random() * number)
-// }

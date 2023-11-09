@@ -3,57 +3,56 @@ var obstacleX = 100;
 var newObsatacle = document.createElement("div");
 newObsatacle.style.display = "none";
 
-
 function moveBackground() {
     m--;
-    document.getElementById("back").style.backgroundPosition = m+"px";
+    document.getElementById("back").style.backgroundPosition = m + "px";
 }
-
 
 var isLiving = true;
 
-window.onload = function() {
-    spawnObstacle();
-}
-
 function spawnObstacle() {
-    // var obstacleX = 100;
+    var obstacleX = 100;
 
-    // var newObsatacle = document.createElement("div");
-    // newObsatacle.style.display = "none";
-    newObsatacle.style.backgroundColor = "red";
-    newObsatacle.style.height = "5%";
-    newObsatacle.style.width = "2.5%";
-    newObsatacle.style.position = "absolute";
-    newObsatacle.style.top = "50%";
-    newObsatacle.style.left = "50%";
+    var newObstacle = document.createElement("img");
+    newObstacle.src = "/images/monkey.png"
+    newObstacle.style.height = "10%";
+    newObstacle.style.width = "5%";
+    newObstacle.style.position = "absolute";
+    newObstacle.style.top = "45%";
+    newObstacle.style.left = "100%";
 
-    // setInterval(function() {
-    //     obstacleX -= 1;
-    //     newObsatacle.style.left = obstacleX + "%";
+    setInterval(function () {
+        obstacleX -= 1;
+        newObstacle.style.left = obstacleX + "%";
 
-    //     checkCollision(obstacleX);
+        checkCollision(obstacleX);
+    }, 100);
 
-    // },100)
-    document.body.appendChild(newObsatacle)
+    document.body.appendChild(newObstacle);
 
-    var respawnTime = (Math.random()*3000) + 1000
+    var respawnTime = (Math.random() * 3000) + 1000;
 
-    setTimeout(function(){
+    setTimeout(function () {
         spawnObstacle();
-    },respawnTime)
+    }, respawnTime);
 }
 
 function checkCollision(obstacleX) {
-
     if (isLiving == false) return;
 
     if (obstacleX > 23 && obstacleX < 25) {
         deathSound.play();
         alert("You died");
         isLiving = false;
-        location.reload();
-        
+        model.data.isAlive = false
+        clearInterval(pointInterval);
+        clearInterval(coinInterval);
+        clearInterval(backgroundInterval);
+        clearInterval(runInterval1);
+        clearInterval(runInterval2);
+
+        setTimeout(function () {
+            mainPage()
+        }, 500);
     }
-    
 }
